@@ -30,3 +30,4 @@ class DBConnector:
 
     def db_delete_all(self,collection):
         self.db[collection].delete_many({})
+        

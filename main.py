@@ -69,3 +69,4 @@ if __name__=="__main__":
     # db_obj.db_find("bug_info","init")
     # db_obj.db_delete_all("bug_info")
     # main()
+    
