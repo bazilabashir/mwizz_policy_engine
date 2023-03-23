@@ -8,6 +8,7 @@ class ProcessService:
         # filename =logs['logFileName']
         obj = {
         'filename': logs['logFileName'],
+        'severity': logs['severity'],
         'productName':"xyz",
         'error':[]
         }   
@@ -46,5 +47,5 @@ class ProcessService:
                         })
         print(obj)
         return obj
-        
+
 

@@ -28,6 +28,10 @@ class DBConnector:
         # print(res)
         return res
 
+    # def db_update_status(self,collection,data,status):
+    #     value = {"$set":{"status":status}}
+    #     self.db[collection].update_one({data,value})
+    
+
     def db_delete_all(self,collection):
         self.db[collection].delete_many({})
-        

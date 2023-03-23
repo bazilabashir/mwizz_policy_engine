@@ -1,6 +1,8 @@
 from db_connector import DBConnector
 from process_service import ProcessService
+import schedule
 from es_connector import ESConnector
+import time
 
 db_obj = DBConnector()
 service = ProcessService()
@@ -21,8 +23,9 @@ def main():
     print("Processing Started !!!")
     policy = db_obj.db_find("policy_db")
     logs = db_obj.db_find("bug_info","status")
-    # service.process(logs[4],policy[1:])
     for log in logs:
+        # filename = log['logFileName']
+        # db_obj.db_update_status("bug_info",log,"ready")
         data = service.process(log,policy)
         print(data)
 
@@ -69,4 +72,10 @@ if __name__=="__main__":
     # db_obj.db_find("bug_info","init")
     # db_obj.db_delete_all("bug_info")
     # main()
-    
+# print("starting schedular")
+# schedule.every(1).minutes.do(main)
+# print("Task completed")
+
+# while True:
+#     schedule.run_pending()
+#     time.sleep(1)

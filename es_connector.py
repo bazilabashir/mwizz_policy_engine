@@ -11,4 +11,3 @@ class ESConnector:
     def insert_doc(self,doc):
         result = self.es.index(index='my_index', doc_type='_doc', body=doc)
         print(result)
-        
